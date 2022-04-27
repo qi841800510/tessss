@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+			//创建一个xhr对象
+			let xhr = new XMLHttpRequest();
+			//调用open函数 指定请求方式与url地址
+			xhr.open("GET","https://elm.cangdu.org/v1/cities?type=hot")
+			//调用send函数
+			xhr.send()
+			//监听onreadystatechange事件
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === 4 && xhr.status === 200){
+					//获取服务器响应的数据
+					console.log(xhr.responseText);
+				}
+			}
+	</script>
+</html>
